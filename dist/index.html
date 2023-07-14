@@ -27,34 +27,14 @@
             </button>
              <div class="nav_item" id="project_list">
                 <button id="add_project_btn" class="nav_btn"><span class="material-symbols-outlined">add</span>Add project</button>
-                <button class="nav_btn project"><span class="material-symbols-outlined">article</span>Project</button>
-                <button class="nav_btn project"><span class="material-symbols-outlined">article</span>Project</button>
-                <button class="nav_btn project"><span class="material-symbols-outlined">article</span>Project</button>
-                <button class="nav_btn project"><span class="material-symbols-outlined">article</span>Project</button>
-                <button class="nav_btn project"><span class="material-symbols-outlined">article</span>Project</button>
-                <button class="nav_btn project"><span class="material-symbols-outlined">article</span>Project</button>
-                <button class="nav_btn project"><span class="material-symbols-outlined">article</span>Project</button>
-                <button class="nav_btn project"><span class="material-symbols-outlined">article</span>Project</button>
-            </div>
+               
+             </div>
       </div>
     </section>
     <section id="dashboard_container" class="active">
         <h1 id="project_id">Today</h1>
         <span class="underline"></span>
-        <div class="task_list">
-            <div class="task">
-                <div class="task_overview">
-                    <div class="left">
-                        <input type="checkbox">
-                        <h6>TASK</h6>
-                    </div>
-                    <div class="right">
-                        <div class="task_btn edit_task"><span class="material-symbols-outlined">edit</span></div>
-                        <div class="task_btn delete_task"><span class="material-symbols-outlined">delete</span></div>
-                     </div>
-                </div>
-            </div>
-            
+        <div id="task_list">
          </div>       
     </section>
     <div id="dark_background">
@@ -62,23 +42,27 @@
         
     </div>
     <div id="add_prjt_pop_up">
+        <form id="add_prjt_form">
         <h1>Add a new project</h1>
-        <input id="project_name_input" type="text">
+        <input id="project_name_input"  autocomplete='off'  type="text" required>
         <button id="project_name_btn" type="submit">Create Project</button>
+    </form>
        </div>
     <div id="add_task_pop_up">
+           <form id="add_task_form">
             <h1>Add New Task</h1>
-            <label for="Task_name"> Task name : <input type="text" name="Task_name" id="Task_name" placeholder="Taskname"></label>
-            <label for="Task_description"> Description : <input type="text" name="Task_description" id="Task_description" placeholder="Description"></label>
+            <label for="Task_name"> Task name : <input type="text" name="Task_name" id="Task_name" placeholder="Taskname" required></label>
+            <label for="Task_description"> Description : <input type="text" name="Task_description" id="Task_description" placeholder="Description" required></label>
             <label for="Priority_type"> Priority :
-                <select  name="Priority_type" id="Priority_type" placeholder="Priority">
+                <select  name="Priority_type" id="Priority_type" placeholder="Priority" required>
                   <option value="low">low</option>
                   <option value="medium">medium</option>
                   <option value="high">high</option>
                 </select>
             </label>
-            <label for="date"> Date : <input type="date" name="date" id="date" placeholder="DD-MM-YYYY"></label>
+            <label for="date" > Date : <input type="date" name="date" id="date" placeholder="DD-MM-YYYY" required></label>
             <button type="submit"> Create New Task</button>
+        </form>
      </div> 
     <script src="main.js"></script>
 </body>

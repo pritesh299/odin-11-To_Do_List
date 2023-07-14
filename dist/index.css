@@ -1,3 +1,7 @@
+:root{
+  --primary: 240 5.9% 10%;
+}
+
 *{
     margin: 0;
     padding: 0; 
@@ -20,6 +24,12 @@ body{
 button{
   cursor: pointer;
 }
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 /*---scroll bar*/
 ::-webkit-scrollbar {
   width: 2px;
@@ -27,16 +37,17 @@ button{
 ::-webkit-scrollbar-thumb {
   background-color: grey;
 }
-/*----------header-----------*/
+/*----------header--------   hsl(240 5.9% 10%)---*/
 header{
-   background-color: #3e92cc;
+background-color: #f6f8fa;
    padding: 20px;
    grid-column: 1/4;
    grid-row:1/2;
-   color: white;
+   color: hsl(240 5.9% 10%);
    display: flex;
     align-items: center;
     gap: 20px;
+    border-bottom: 1px solid hsl(240 5.9% 10%) ;
 }
 
 .header_btn{
@@ -44,10 +55,9 @@ header{
   width: 39px;
   border-radius: 50px;
   border: none;
-  background-color:#3276ae;
+  background-color:hsl(240 5.9% 10%);
   color: white;
 }
-
 
 /*-----side bar-------*/
 
@@ -119,7 +129,7 @@ header{
 }
 
 span.material-symbols-outlined{
-  background-color: #3e92cc;
+  background-color: hsl(240 5.9% 10%);
 }
 #Projects_expand_btn{
   display: flex;
@@ -200,22 +210,19 @@ div#dark_background {
 }
 
 #add_prjt_pop_up{
-  position: absolute;
-   height: 25%;
-   width: 30%;
+   position: absolute;
    display: flex;
    flex-direction: column;
    padding: 20px;
    gap: 20px;
-  border-radius: 12px;
- background-color: white;
- display: none;
- position: fixed;
-  z-index: 1;
-  transition: 0.5s ease-in-out;
-  transform: translate(-50%, -50%) scale(1);
-  top: 50%;
-  left: 50%;
+   border-radius: 12px;
+   background-color: white;
+   position: fixed;
+   z-index: 1;
+   transition: 0.3s ease-in-out;
+   transform: translate(-50%, -50%) scale(0);
+   top: 50%;
+   left: 50%;
 
 }
 
@@ -236,7 +243,7 @@ button[type='submit']{
   border-radius: 50px;
   font-size: 15px;
   font-weight: 500;
-  background-color: #3e92cc;
+  background-color: hsl(240 5.9% 10%);
   color: white;
 
 }
@@ -246,11 +253,10 @@ button[type='submit']{
   padding: 20px;
    background-color: white;
   border-radius: 12px;
-  display: none;
   position: fixed;
   z-index: 1;
-  transition: 0.5s ease-in-out;
-  transform: translate(-50%, -50%) scale(1);
+  transition: 0.3s ease-in-out;
+  transform: translate(-50%, -50%) scale(0);
   top: 50%;
   left: 50%;
 
@@ -306,4 +312,27 @@ button[type='submit']{
 
 #add_task_pop_up input[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+  }
+
+  #sidebar,
+  #dashboard_container {
+    grid-column: 1/2;
+  }
+
+  #dashboard_container.active {
+    margin-left: 0;
+  }
+
+  #sidebar.active {
+    width: 100%;
+    opacity: 1;
+    grid-column: 1/2;
+  }
 }
