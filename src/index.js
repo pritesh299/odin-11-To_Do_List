@@ -1,4 +1,6 @@
-import {createProjectInStroge,createTaskHTML,createTaskInStroge,createProjectHTML,projectArray,} from './project-task_mangement.js'
+  
+  import { addProject, addTask,todo } from './storage.js';
+import {createTaskHTML,createProjectHTML, currentProjectID} from './user_inertface.js'
 
 
 // Get DOM elements
@@ -74,20 +76,20 @@ darkBackground.addEventListener('click', () => {
   darkBackground.style.display = 'none';
   addTaskWindow.style.transform = 'translate(-50%, -50%) scale(0)';
   addProjectWindow.style.transform = 'translate(-50%, -50%) scale(0)';
+
 });
 
 createProjectForm.addEventListener('submit',(e)=>{
     e.preventDefault();
-    createProjectInStroge(projectArray.length)
-    createProjectHTML(projectArray.length-1)
+    addProject()
+    createProjectHTML(todo.projects.length-1)
     darkBackground.click()
 })
 
 addTaskForm.addEventListener('submit',(e)=>{
   e.preventDefault()
-  createTaskInStroge()
-  createTaskHTML()
+  addTask(currentProjectID)
+  createTaskHTML(currentProjectID,todo.getProject(currentProjectID).tasks.length-1)
   darkBackground.click()
-
-
 })
+

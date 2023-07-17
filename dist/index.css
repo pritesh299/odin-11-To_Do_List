@@ -170,7 +170,15 @@ span.material-symbols-outlined{
   margin-left:-10% ;
 
 }
+#project_headline{
 
+  display: flex;
+  justify-content: space-between;
+}
+#add_task_btn{
+  background-color:  hsl(240 5.9% 10%);
+  border:none;
+}
 .underline{
   border-bottom: 2px solid grey;
   margin-top: 10px;
@@ -183,6 +191,11 @@ span.material-symbols-outlined{
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid #f0f0f0;
+}
+
+.task_overview button{
+  background-color:  hsl(240 5.9% 10%);
+  border:none;
 }
 .left{
   display: flex;
